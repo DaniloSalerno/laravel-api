@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ProjectController;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -20,9 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('projects', function () {
-    return response()->json([
-        'status' => 'success',
-        'result' => Project::with('type', 'technologies')->orderByDesc('id')->paginate(10)
-    ]);
-});
+Route::get('/projects', [ProjectController::class, 'projects']);
+
+Route::get('/types', [ProjectController::class, 'types']);
+
+Route::get('/technologies', [ProjectController::class, 'technologies']);
