@@ -13,7 +13,7 @@ class ProjectController extends Controller
     public function projects()
     {
         return response()->json([
-            'status' => 'success',
+            'success' => 'true',
             'result' => Project::with('type', 'technologies')->orderByDesc('id')->paginate(10)
         ]);
     }
@@ -21,7 +21,7 @@ class ProjectController extends Controller
     public function types()
     {
         return response()->json([
-            'status' => 'success',
+            'success' => 'true',
             'result' => Type::with('projects')->orderByDesc('id')->paginate(10)
         ]);
     }
@@ -29,8 +29,25 @@ class ProjectController extends Controller
     public function technologies()
     {
         return response()->json([
-            'status' => 'success',
+            'success' => 'true',
             'result' => Technology::with('projects')->orderByDesc('id')->paginate(10)
         ]);
+    }
+
+    public function show($slug)
+    {
+        $project = Project::with('type', 'technologies')->where('slug', $slug)->first();
+
+        if ($project) {
+            return response()->json([
+                'success' => 'true',
+                'result' => $project
+            ]);
+        } else {
+            return response()->json([
+                'success' => 'false',
+                'result' => 'Page not fount'
+            ]);
+        }
     }
 }
