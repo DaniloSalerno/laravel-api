@@ -30,7 +30,7 @@ Route::get('projects/{project:slug}', [ProjectController::class, 'show']);
 Route::get('/projects-latest', [ProjectController::class, 'latestProjects']);
 
 Route::get('/types', [TypeController::class, 'index']);
-Route::get('/types/{type:slug}', [TypeController::class, 'show']);
+Route::get('/types/{type:slug}/projects', [TypeController::class, 'show']);
 
 Route::get('/technologies', [TechnologyController::class, 'index']);
 Route::get('/technologies/{technology:slug}/projects', [TechnologyController::class, 'show']);
