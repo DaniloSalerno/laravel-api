@@ -33,3 +33,4 @@ Route::get('/types', [TypeController::class, 'index']);
 Route::get('/types/{type:slug}', [TypeController::class, 'show']);
 
 Route::get('/technologies', [TechnologyController::class, 'index']);
+Route::get('/technologies/{technology:slug}/projects', [TechnologyController::class, 'show']);
