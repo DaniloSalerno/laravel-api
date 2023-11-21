@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class TechnologyController extends Controller
 {
-    public function technologies()
+    public function index()
     {
         return response()->json([
             'success' => true,
