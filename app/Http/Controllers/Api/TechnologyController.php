@@ -18,7 +18,7 @@ class TechnologyController extends Controller
 
     public function show($slug)
     {
-        $technology = Technology::with('projects')->where('slug', $slug)->first()->projects()->paginate(10);
+        $technology = Technology::with('projects')->where('slug', $slug)->first()->projects()->paginate(8);
         //dd($technology);
         if ($technology) {
             return response()->json([
