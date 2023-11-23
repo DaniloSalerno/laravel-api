@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\LeadControlller;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\api\TechnologyController;
 use App\Http\Controllers\api\TypeController;
@@ -34,3 +35,5 @@ Route::get('/types/{type:slug}/projects', [TypeController::class, 'show']);
 
 Route::get('/technologies', [TechnologyController::class, 'index']);
 Route::get('/technologies/{technology:slug}/projects', [TechnologyController::class, 'show']);
+
+Route::post('/contacts', [LeadControlller::class, 'store']);
