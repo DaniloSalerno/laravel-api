@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Mail\NewLeadEmail;
+use App\Models\Lead;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class LeadControlller extends Controller
@@ -17,6 +20,17 @@ class LeadControlller extends Controller
             'phone' => 'required',
             'message' => 'required',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'errors' => $validator->errors()
+            ]);
+        }
+
+        $lead = Lead::create($request->all());
+
+        Mail::to('admin@boolfolio.it')->send(new NewLeadEmail($lead));
 
         return response()->json([
             'success' => true,
