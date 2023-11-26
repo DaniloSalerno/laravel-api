@@ -18,7 +18,7 @@ class TypeController extends Controller
 
     public function show($slug)
     {
-        $type = Type::with('projects')->where('slug', $slug)->first()->projects()->paginate(8);
+        $type = Type::with('projects')->where('slug', $slug)->first()->projects()->paginate(6);
 
         if ($type) {
             return response()->json([
