@@ -108,6 +108,10 @@
                                 <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.technologies.index' ? 'bg-secondary' : '' }}" href="{{route('admin.technologies.index')}}">
                                     <i class="fa-solid fa-laptop-code fa-lg fa-fw"></i> Technologies
                                 </a>
+
+                                {{-- <a class="nav-link text-white {{ Route::currentRouteName() == 'admin.leads.index' ? 'bg-secondary' : '' }}" href="{{route('admin.leads.index')}}">
+                                    <i class="fa-solid fa-laptop-code fa-lg fa-fw"></i> Leads
+                                </a> --}}
                             </li>
 
                         </ul>
