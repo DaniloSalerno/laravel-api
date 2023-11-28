@@ -19,7 +19,7 @@
                   </svg>
             </a>
 
-            <a href="{{ route('admin.github.fetch') }}" class="btn btn-outline-dark icon-link"><i class="fa-brands fa-github"></i> Fetch GitHub</a>
+            <a href="{{ route('admin.github.fetch') }}" class="btn btn-outline-dark icon-link ms-5"><i class="fa-brands fa-github"></i> Fetch GitHub</a>
         </div>
         {{-- /#icons --}}
 
