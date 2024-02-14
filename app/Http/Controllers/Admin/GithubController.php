@@ -19,9 +19,9 @@ class GithubController extends Controller
 
         if ($response->successful()) {
 
-            $repositories  = $response->json();
+            $repositories  = array_reverse($response->json());
 
-            //dd($response->json());
+            //dd(array_reverse($response->json()));
 
             foreach ($repositories as $repository) {
 

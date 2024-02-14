@@ -46,7 +46,7 @@
 
                         <td>
     
-                            <img width="100" class="img-fluid" src="{{$project->thumb}}" alt="">
+                            <img width="200" class="img_table" src="{{$project->thumb}}" alt="">
 
                         </td>
 

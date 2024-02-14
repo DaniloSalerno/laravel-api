@@ -7,3 +7,11 @@
 
     transition: all 0.3s;
 }
+
+td {
+
+    img {
+        height: 100px;
+        object-fit: cover;
+    }
+}
