@@ -26,7 +26,7 @@ class StoreProjectRequest extends FormRequest
         return [
             'title' => ['bail', 'required', 'min:5', 'max:100', 'unique:projects'],
             'description' => ['bail', 'required', 'min:10', 'max:300'],
-            'content' => ['bail', 'required', 'min:10', 'max:1000'],
+            'content' => ['bail', 'required', 'min:10', 'max:2000'],
             'thumb' => ['bail', 'required', 'image', 'max:2000'],
             'project_url' => ['bail', 'nullable', 'string', 'max:255', Rule::unique('projects')],
             'git_url' => ['bail', 'nullable', 'string', 'max:255', Rule::unique('projects')],
